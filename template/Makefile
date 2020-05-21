@@ -23,15 +23,24 @@ GREEN	=	"\e[32m"
 
 YELLOW	=	"\e[33m"
 
-####################
+##				FILES SRC			###
 
 CLEANER_SRC	=	src/cleaner/cleaner.c
 
 PROG_INFO_SRC	=	src/prog_info/prog_info.c
 
+SCENES_FOLD	=	src/scenes
+
+GAME_SCENE_SRC	=	$(SCENES_FOLD)/game_scene/game_scene.c
+
+SCENES_SRC	=	src/scenes/init_scenes.c	\
+				$(GAME_SCENE_SRC)
+
+
 SRC	=	src/game.c	\
 		$(CLEANER_SRC)	\
-		$(PROG_INFO_SRC)
+		$(PROG_INFO_SRC)	\
+		$(SCENES_SRC)
 
 OSRC	=	$(SRC:.c=.o)
 
